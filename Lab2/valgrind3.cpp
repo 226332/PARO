@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdexcept>
-
+#include <memory>
 using namespace std;
 
 class Resource
@@ -33,15 +33,14 @@ int main(int argc, char* argv[])
         cerr << "You need to pass 1 argument" << endl;
         exit(-1);
     }
-    const char* N = argv[1];
-    Resource* rsc = nullptr;
+    const char* N{argv[1]};
+    unique_ptr<Resource> rsc{nullptr};
     try
     {
-        rsc = new Resource();
+        rsc = make_unique<Resource>();
         rsc->use(N);
-        delete rsc;
     }
-    catch (Errorek & e)
+    catch (Errorek & e)	
     {
         cout << e.what() << endl;
     }
