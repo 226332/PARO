@@ -19,7 +19,12 @@ vector<Product> find_cheapest(vector<Product> const& v, unsigned num)
 {
     // TODO: return x cheapest products, where x is function param (num)
     // Note: Please pay attention to performance.
-    return vector<Product>();
+    if(num>v.size())
+		num=v.size();
+		
+    vector<Product> p(v.begin(), v.end());
+    partial_sort(p.begin(),p.begin()+num, p.end());
+    return vector<Product>(p.begin(),p.begin()+num);
 }
 
 TEST(Cheap, Test)

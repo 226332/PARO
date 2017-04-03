@@ -8,9 +8,13 @@ using namespace std;
 template <typename T>
 vector<T> unique(vector<T> const& first, vector<T> const& second)
 {
-    // TODO:      This function should join input vectors and return only unique elements.
-    // Important: Use only containers! No algorithms allowed.
-    return vector<T>{};
+	
+	set<T> result(first.begin(),first.end());
+	result.insert(second.begin(),second.end());
+	vector<T> output(result.begin(),result.end());
+	
+    return output;
+    
 }
 
 TEST(DupTest, Test)
@@ -28,6 +32,7 @@ TEST(DupTest, Test)
 int main(int ac, char ** av)
 {
     ::testing::InitGoogleTest(&ac, av);
+    
     return RUN_ALL_TESTS();
 }
 
