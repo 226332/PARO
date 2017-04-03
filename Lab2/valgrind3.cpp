@@ -34,10 +34,9 @@ int main(int argc, char* argv[])
         exit(-1);
     }
     const char* N{argv[1]};
-    unique_ptr<Resource> rsc{nullptr};
     try
     {
-        rsc = make_unique<Resource>();
+        auto rsc = make_unique<Resource>();
         rsc->use(N);
     }
     catch (Errorek & e)	

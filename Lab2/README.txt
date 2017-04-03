@@ -16,7 +16,7 @@ Rada: Używaj gita. Rób commit co każdy punkt/podpunkt.
    Popraw kod tak, aby nie było wycieku pamięci, skompiluj i ponownie sprawdź program valgrindem
 
 2. Uruchom valgrind2 i analogicznie użyj valgrinda aby sprawdzić wycieki pamięci. Popraw program.
-
+	
 3. Uruchom valgrind3 i sprawdź czy są w nim wycieki pamięci.
 a) napisz własną klasę wyjatków dziedziczącą po logic_error i użyj jej w kodzie zamiast logic_error
 b) popraw wyciek pamięci w programie

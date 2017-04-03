@@ -12,21 +12,30 @@ public:
 
     Node* next;
     int value;
+    ~Node(){delete next;}
 };
 
 class List
 {
 public:
     List();
+    ~List(){
+		Node* current = first;
+		while(first!=nullptr){
+			current=first->next;
+			delete first;
+			first=current;
+	}
+		};
     void add(Node* node);        // dodaje element na koniec listy
     Node* get(const int value);  // zwraca element o wskazanej wartości
-
+	
 private:
     Node* first;
 };
 
-List::List() :
-    first(nullptr)
+List::List()
+	:first(nullptr)
 {}
 
 void List::add(Node* node)
@@ -40,9 +49,14 @@ void List::add(Node* node)
         Node* current = first;
         while(current->next)
         {
+			if (current==node){
+				
+			}
             current = current->next;
+            
         }
         current->next = node;
+        
     }
 }
 
@@ -79,12 +93,9 @@ int main()
     List lista;
     Node* node4 = new Node(4);
     Node* node7 = new Node(7);
-
     lista.add(node4);
-    lista.add(new Node(2));
-    lista.add(node7);
-    lista.add(new Node(9));
-    auto node = lista.get(1);
+    //lista.add(node4);
+    //auto node = lista.get(1);
 
     return 0;
 }

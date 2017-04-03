@@ -1,0 +1,6 @@
+/home/arr/Desktop/NOKIA/PARO/Lab2/build/CMakeFiles/edit_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab2/build/CMakeFiles/rebuild_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab2/build/CMakeFiles/valgrind1.dir
+/home/arr/Desktop/NOKIA/PARO/Lab2/build/CMakeFiles/valgrind2.dir
+/home/arr/Desktop/NOKIA/PARO/Lab2/build/CMakeFiles/list.dir
+/home/arr/Desktop/NOKIA/PARO/Lab2/build/CMakeFiles/valgrind3.dir
