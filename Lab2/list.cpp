@@ -50,7 +50,9 @@ class List
 public:
     List();
     ~List(){}
-    void add(shared_ptr<Node<T>> &&node);        // dodaje element na koniec listy
+    // dodaje element na koniec listy
+    void add(shared_ptr<Node<T>> &&node);   // przenoszenie
+    void add(shared_ptr<Node<T>> &nod);    // kopiowanie
     shared_ptr<Node<T>> get(const T value); 	  // zwraca element o wskazanej wartości
     void addFirst(shared_ptr<Node<T>> node);     // dodaje element na początek listy
     shared_ptr<Node<T>> getBackward(const T value); // zwraca element o wskazanej wartości od końca
@@ -83,6 +85,25 @@ void List<T>::add(shared_ptr<Node<T>> &&node){
 		last=node;
     }
     node=nullptr;
+}
+
+template<typename T>
+void List<T>::add(shared_ptr<Node<T>> &nod){
+	if(!nod){
+		throw NullNodeError();
+	}
+	auto node=make_shared<Node<T>>(nod->value);
+    if(!first){
+        first = node;
+    }else if (!first->next){
+		first->next=node;
+		last=node;
+		last->previous=first;
+	}else{
+		node->previous=last;
+		last->next=node;
+		last=node;
+    }
 }
 
 template<typename T>
@@ -147,26 +168,46 @@ int main()
     List<string> lista;
     auto nodeNapis=make_shared<Node<string>>("napis");
     auto nodeHello=make_shared<Node<string>>("hello");
-	lista.add(move(nodeNapis));
-    lista.add(move(nodeHello));
+    cout<<"Empty list exceptions:"<<endl;
+    cout<<"------------------------------"<<endl;
     try{
+		auto node=lista.get("text"); 
+	}catch(const EmptyListError &e){ 
+		cout<<e.what()<<endl;
+	}
+    cout<<"------------------------------"<<endl<<endl;
+    
+	lista.add(nodeNapis);
     lista.add(move(nodeHello));
+    
+    
+    cout<<"Nullptr exceptions:"<<endl;
+    cout<<"------------------------------"<<endl;
+    try{
+    lista.add(move(nodeHello)); 
+	}catch(const NullNodeError &e){ 
+		cout<<e.what()<<endl;
+	}
+	try{
+    lista.add(nullptr);
 	}catch(const NullNodeError &e){
 		cout<<e.what()<<endl;
 	}
-	
+	cout<<"------------------------------"<<endl<<endl;
+	cout<<"Not found exceptions:"<<endl;
+	cout<<"------------------------------"<<endl;
     try{
 		auto node = lista.get("text");
-	}
-	catch(const NotFoundError &e){
+	}catch(const NotFoundError &e){
 		cout << e.what() << endl;
-}
+	}
     try{
 		auto node = lista.getBackward("text");
-	}
-	catch(const NotFoundError &e){
+	}catch(const NotFoundError &e){
 		cout << e.what() << endl;
-}
+	}
+	cout<<"------------------------------"<<endl<<endl;
+
     return 0;
 }
 
