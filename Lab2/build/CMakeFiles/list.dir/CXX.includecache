@@ -11,10 +11,4 @@ iostream
 -
 memory
 -
-exception
--
-stdexcept
--
-sstream
--
 
