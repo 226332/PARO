@@ -1,102 +1,172 @@
 #include <iostream>
-
+#include <memory>
+#include <exception>
+#include <stdexcept>
+#include <sstream>
 using namespace std;
+class EmptyListError:public runtime_error{
+	static ostringstream cnvt;
+public:
+	EmptyListError()
+	:runtime_error("Usage of empty list!")
+	{}
+};
 
+class  NotFoundError:public runtime_error{
+	static ostringstream cnvt;
+public:
+	NotFoundError()
+	:runtime_error("Node not found!")
+	{}
+};
+
+class  NullNodeError:public runtime_error{
+	static ostringstream cnvt;
+public:
+	NullNodeError()
+	:runtime_error("Cannot add empty Node pointer!")
+	{}
+};
+
+
+
+template<typename T>
 class Node
 {
 public:
-    Node(const int v) :
+    Node(const T v) :
         next(nullptr),
+        previous(nullptr),
         value(v)
     {}
-
-    Node* next;
-    int value;
-    ~Node(){delete next;}
+    shared_ptr<Node<T>> next;
+    shared_ptr<Node<T>> previous;
+    T value;
 };
 
+template<typename T>
 class List
 {
 public:
     List();
-    ~List(){
-		Node* current = first;
-		while(first!=nullptr){
-			current=first->next;
-			delete first;
-			first=current;
-	}
-		};
-    void add(Node* node);        // dodaje element na koniec listy
-    Node* get(const int value);  // zwraca element o wskazanej wartości
+    ~List(){}
+    void add(shared_ptr<Node<T>> &&node);        // dodaje element na koniec listy
+    shared_ptr<Node<T>> get(const T value); 	  // zwraca element o wskazanej wartości
+    void addFirst(shared_ptr<Node<T>> node);     // dodaje element na początek listy
+    shared_ptr<Node<T>> getBackward(const T value); // zwraca element o wskazanej wartości od końca
+    
 	
 private:
-    Node* first;
+    shared_ptr<Node<T>> first;
+    shared_ptr<Node<T>> last;
 };
-
-List::List()
+template<typename T>
+List<T>::List()
 	:first(nullptr)
-{}
-
-void List::add(Node* node)
-{
-    if(!first)
-    {
+	,last(nullptr)
+	{}
+	
+template<typename T>
+void List<T>::add(shared_ptr<Node<T>> &&node){
+	if(!node){
+		throw NullNodeError();
+	}
+    if(!first){
         first = node;
+    }else if (!first->next){
+		first->next=node;
+		last=node;
+		last->previous=first;
+	}else{
+		node->previous=last;
+		last->next=node;
+		last=node;
     }
-    else
-    {
-        Node* current = first;
-        while(current->next)
-        {
-			if (current==node){
-				
-			}
-            current = current->next;
-            
-        }
-        current->next = node;
-        
-    }
+    node=nullptr;
 }
 
-Node* List::get(const int value)
-{
-    if(!first)
-    {
-        cout << "List is empty!" << endl;
+template<typename T>
+void List<T>::addFirst(shared_ptr<Node<T>> node){
+	if(!first){
+        first = node;
+	}else{
+		node->next=first;
+		first=node;
+	}
+}
+template<typename T>
+shared_ptr<Node<T>> List<T>::get(const T value){
+    if(!first){
+        throw EmptyListError();
         return nullptr;
-    }
-    else
-    {
-        Node* current = first;
-        do
-        {
-            if(current->value == value)
-            {
+    }else{
+        shared_ptr<Node<T>> current = first;
+        do{
+            if(current->value == value){
                 cout << "Found value " << current->value << endl;
                 return current;
             }
-            else
-            {
+            else{
                 cout << "Going through " << current->value << endl;
                 current = current->next;
             }
         } while(current);
-        cout << "Not found: value " << value << endl;
+        throw NotFoundError();
+        return nullptr;
+    }
+}
+
+template<typename T>
+shared_ptr<Node<T>> List<T>::getBackward(const T value){
+	shared_ptr<Node<T>> current=last;
+	if(!last){
+		current=first;
+	}
+	
+	if(!first){
+        throw EmptyListError();
+        return nullptr;
+    }else{
+        do{
+            if(current->value == value){
+                cout << "Found value " << current->value << endl;
+                return current;
+            }
+            else{
+                cout << "Going through " << current->value << endl;
+                current = current->previous;
+            }
+        } while(current);
+        throw NotFoundError();
         return nullptr;
     }
 }
 
 int main()
 {
-    List lista;
-    Node* node4 = new Node(4);
-    Node* node7 = new Node(7);
-    lista.add(node4);
-    //lista.add(node4);
-    //auto node = lista.get(1);
-
+    List<int> lista;
+    shared_ptr<Node<int>> node4=make_shared<Node<int>>(4);
+    shared_ptr<Node<int>> node7=make_shared<Node<int>>(7);
+    lista.add(move(node4));
+    lista.add(move(node7));
+    try{
+    lista.add(move(node4));
+	}catch(const NullNodeError &e){
+		cout<<e.what()<<endl;
+	}
+	
+    try{
+		auto node = lista.get(1);
+	}
+	catch(const NotFoundError &e){
+		cout << e.what() << endl;
+}
+    try{
+		auto node = lista.getBackward(1);
+	}
+	catch(const NotFoundError &e){
+		cout << e.what() << endl;
+}
     return 0;
 }
 

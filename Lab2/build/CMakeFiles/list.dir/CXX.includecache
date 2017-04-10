@@ -9,4 +9,12 @@
 /home/arr/Desktop/NOKIA/PARO/Lab2/list.cpp
 iostream
 -
+memory
+-
+exception
+-
+stdexcept
+-
+sstream
+-
 
