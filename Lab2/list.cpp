@@ -144,25 +144,25 @@ shared_ptr<Node<T>> List<T>::getBackward(const T value){
 
 int main()
 {
-    List<int> lista;
-    shared_ptr<Node<int>> node4=make_shared<Node<int>>(4);
-    shared_ptr<Node<int>> node7=make_shared<Node<int>>(7);
-    lista.add(move(node4));
-    lista.add(move(node7));
+    List<string> lista;
+    auto nodeNapis=make_shared<Node<string>>("napis");
+    auto nodeHello=make_shared<Node<string>>("hello");
+	lista.add(move(nodeNapis));
+    lista.add(move(nodeHello));
     try{
-    lista.add(move(node4));
+    lista.add(move(nodeHello));
 	}catch(const NullNodeError &e){
 		cout<<e.what()<<endl;
 	}
 	
     try{
-		auto node = lista.get(1);
+		auto node = lista.get("text");
 	}
 	catch(const NotFoundError &e){
 		cout << e.what() << endl;
 }
     try{
-		auto node = lista.getBackward(1);
+		auto node = lista.getBackward("text");
 	}
 	catch(const NotFoundError &e){
 		cout << e.what() << endl;
