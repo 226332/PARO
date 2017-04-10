@@ -1,0 +1,13 @@
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/CMakeFiles/edit_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/CMakeFiles/dup.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/CMakeFiles/cheap.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/CMakeFiles/rebuild_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/CMakeFiles/pow2.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/gmock-1.7.0/CMakeFiles/edit_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/gmock-1.7.0/CMakeFiles/rebuild_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/gmock-1.7.0/CMakeFiles/gmock_main.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/gmock-1.7.0/CMakeFiles/gmock.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/gmock-1.7.0/gtest/CMakeFiles/rebuild_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/gmock-1.7.0/gtest/CMakeFiles/edit_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/gmock-1.7.0/gtest/CMakeFiles/gtest_main.dir
+/home/arr/Desktop/NOKIA/PARO/Lab3/build/gmock-1.7.0/gtest/CMakeFiles/gtest.dir
