@@ -2,7 +2,6 @@
 #include <memory>
 using namespace std;
 class EmptyListError : public runtime_error {
-  static ostringstream cnvt;
 
 public:
   EmptyListError() : runtime_error("Usage of empty list!") {}

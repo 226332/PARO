@@ -2,17 +2,17 @@
 
 #include "Rectangle.hpp"
 
-class Square : public Rectangle
+class Square : public Rectangle 
 {
 public:
     Square(double x);
     Square(const Square & other);
 
-    double getArea();
+    double getArea() ;
     double getPerimeter();
     void print();
+    double getY()=delete; // should not have Y dimension
 
 private:
-    double getY(); // should not have Y dimension
     Square();
 };
