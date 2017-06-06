@@ -1,0 +1,8 @@
+/home/arr/Desktop/NOKIA/PARO/lab9/build/CMakeFiles/edit_cache.dir
+/home/arr/Desktop/NOKIA/PARO/lab9/build/CMakeFiles/rebuild_cache.dir
+/home/arr/Desktop/NOKIA/PARO/lab9/build/src/CMakeFiles/edit_cache.dir
+/home/arr/Desktop/NOKIA/PARO/lab9/build/src/CMakeFiles/rebuild_cache.dir
+/home/arr/Desktop/NOKIA/PARO/lab9/build/src/CMakeFiles/brainfuck.dir
+/home/arr/Desktop/NOKIA/PARO/lab9/build/test/CMakeFiles/edit_cache.dir
+/home/arr/Desktop/NOKIA/PARO/lab9/build/test/CMakeFiles/rebuild_cache.dir
+/home/arr/Desktop/NOKIA/PARO/lab9/build/test/CMakeFiles/BrainfuckTests.dir

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arr/Desktop/NOKIA/PARO/lab9/src/Brainfuck.cpp
+Brainfuck.hpp
+/home/arr/Desktop/NOKIA/PARO/lab9/src/Brainfuck.hpp
+Memory.hpp
+/home/arr/Desktop/NOKIA/PARO/lab9/src/Memory.hpp
+iostream
+-
+stack
+-
+
+/home/arr/Desktop/NOKIA/PARO/lab9/src/Brainfuck.hpp
+string
+-
+
+/home/arr/Desktop/NOKIA/PARO/lab9/src/Memory.hpp
+vector
+-
+

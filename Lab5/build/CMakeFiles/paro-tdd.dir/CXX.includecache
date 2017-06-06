@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arr/Desktop/NOKIA/PARO/Lab5/BowlingGame.h
+vector
+-
+
+/home/arr/Desktop/NOKIA/PARO/Lab5/BowlingTDDProject.cpp
+boost/test/unit_test.hpp
+-
+BowlingGame.h
+/home/arr/Desktop/NOKIA/PARO/Lab5/BowlingGame.h
+

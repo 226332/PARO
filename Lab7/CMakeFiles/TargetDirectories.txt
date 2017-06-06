@@ -1,0 +1,11 @@
+/home/arr/Desktop/NOKIA/PARO/Lab7/CMakeFiles/rebuild_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/CMakeFiles/obiad.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/CMakeFiles/edit_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/CMakeFiles/wyjatki.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/CMakeFiles/przekazywanie_przez_kolejke.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/CMakeFiles/podstawowa_synchronizacja.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/CMakeFiles/stworzenie_watku.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/CMakeFiles/argumenty_watku.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/external/CMakeFiles/edit_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/external/CMakeFiles/rebuild_cache.dir
+/home/arr/Desktop/NOKIA/PARO/Lab7/external/CMakeFiles/external.dir

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arr/Desktop/NOKIA/PARO/Lab7/Queue.hpp
+queue
+-
+
+/home/arr/Desktop/NOKIA/PARO/Lab7/przekazywanie_przez_kolejke.cpp
+thread
+-
+typeinfo
+-
+iostream
+-
+Queue.hpp
+/home/arr/Desktop/NOKIA/PARO/Lab7/Queue.hpp
+isPrime.hpp
+/home/arr/Desktop/NOKIA/PARO/Lab7/isPrime.hpp
+
+external/isPrime.hpp
+

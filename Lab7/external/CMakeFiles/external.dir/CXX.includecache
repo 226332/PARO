@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arr/Desktop/NOKIA/PARO/Lab7/external/isPrime.cpp
+cmath
+-
+isPrime.hpp
+/home/arr/Desktop/NOKIA/PARO/Lab7/external/isPrime.hpp
+
+/home/arr/Desktop/NOKIA/PARO/Lab7/external/isPrime.hpp
+

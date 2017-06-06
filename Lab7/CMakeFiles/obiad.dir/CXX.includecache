@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/arr/Desktop/NOKIA/PARO/Lab7/obiad.cpp
+future
+-
+iostream
+-
+obiad.hpp
+/home/arr/Desktop/NOKIA/PARO/Lab7/obiad.hpp
+
+external/obiad.hpp
+future
+-
+chrono
+-
+
